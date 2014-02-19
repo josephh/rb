@@ -7,26 +7,34 @@
 <h1>Ruby notes</h1>
 <h2>Command execution</h2>
 <ol>
-<li>Simplest way to run a ruby script: type <code>ruby</code> into a terminal, enter a command then ^D to execute.</li>
+<li>Simplest way to run a ruby script: type <code>ruby</code> into a terminal, enter a command then <strong>^D</strong> to execute.</li>
 <li>The eval.rb script - in the distribution code, sample folder, provides a program showing the value of each expression as it is entered.</li>
-<li>Note, when executing a command like `puts`, output is displayed and the return too, (in the case of puts =>nil).</li>
+<li>Note, when executing a command like <code>`puts`</code>, output is displayed and the return too, (in the case of puts =>nil).</li>
 <li>The irb program provides an interactive, multiline Ruby shell: complete with command line history, line editing capabilities and job control.</li>
-<li>Run a ruby script as a program simple with, ruby programName.rb</li>
-<li>...or on Unix use the shebang notation, specifying at the top of the file, #!/usr/local/bin/ruby -w (or, if the O/S allows it,  using #!/usr/bin/env ruby, which will search the path for ruby and then execute it).</li>
-<li></li>
+<li>Run a ruby script as a program simply with, ruby programName.rb</li>
+<li>...or on Unix use the shebang notation, specifying at the top of the file, <code>#!/usr/local/bin/ruby -w</code> (or, if the O/S allows it,  using <code>#!/usr/bin/env ruby</code>, which will search the path for ruby and then execute it).</li>
 </ol>
 <h2>Objects</h2>
 <p>
-New up an object with the new() keyword/constructor.  The syntax for calling a constructor on a class, passing in a parameter and assigning a pointer looks something like,
-<code>song1=Song.new("Deep forbidden lake") // note no end of line semi-colon
+New up an object with the <code>new()</code> keyword/constructor.  The syntax for calling a constructor on a class, passing in a parameter and assigning a pointer looks something like,
+<code>song1=Song.new("Deep forbidden lake") // note no end of line semi-colon</code>
 <br/>
 Similarly length() can be applied directly as an operator on an object instance,
-<code>name.length</code>
+<code>name.length</code>.  No need to call a separate function on a string to get information about that string!
 </p>
 <h2>Numbers, arithmetic etc</h2>
-Numbers act objects and have intrinsic objects built-in.  So, for example, it's possible to get the absolute value of an irrational number simply by entering,  
+Numbers act like objects and have intrinsic objects built-in.  So, for example, it's possible to get the absolute value of an irrational number simply by entering,  
 <code>numbera = Number.new(1234.32)</code>
 <code>numbera.abs()</code>
+<h2>Names</h2>
+Ruby convention = <i>first characters of a name indicate its use</i>
+<ol>
+<li><b>Local variables</b>, <b>method parameters</b>, <b>method names</b> : lowercase letter or underscore '_'</li>
+<li><b>Global variables</b> : prefixed with a dollar '$'</li>
+<li><b>Instance variables</b> : at the rate sign '@'</li>
+<li><b>Class variables</b> : two at the rate signs '@@'</li>
+<li><b>Class names, module names</b> and <b>constants</b> : upper case letter</li>
+</ol>
 <h2></h2>
 </html>
 
