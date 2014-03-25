@@ -36,6 +36,20 @@ Ruby convention = <i>first characters of a name indicate its use</i>
 <li><b>Class names, module names</b> and <b>constants</b> : upper case letter</li>
 </ol>
 Following the initial character a name can be any combination of letters, digits, and underscores (though a character following an at the rate '@' character maay not be a digit).
+<h2>Arrays and Hashes</h2>
+<p>Indexed collections - accessible via a key.  A ruby array index is an <b>integer</b> while hashes support any object as a key.  Both arrays and hashes can grow dynamically and both can hold objects of different types.</p>
+<h3>Arrays</h3>
+<p>New arrays can be created with an array literal <code>empty1 = []</code> or using the 'new' keyword, <code> empty2 = Array.new</code></p>
+<h3>Hashes</h3>
+<p>Returns nil when indexed by a key it doesn't contain.  <i>Note! Nil means false in a conditional expression</i> but this default return value (for when a key is not found) can be set on initialisation.</p>
+<p></p>
+<h2>Control Structures</h2>
+<p>Ruby uses the keyword <code>end</code> to signify the end of code block.</p>
+<p>If an expression fits on one line, a 'statement modifier' may be used, for example</p>
+<p><code>puts "some text" if count &gt 10</code>, or </p>
+<p><code>square = square*square while square &lt 1000</code></p>
+<p></p>
+<p></p>
 <h2></h2>
 </html>
 
