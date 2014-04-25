@@ -48,9 +48,27 @@ Following the initial character a name can be any combination of letters, digits
 <p>If an expression fits on one line, a 'statement modifier' may be used, for example</p>
 <p><code>puts "some text" if count &gt 10</code>, or </p>
 <p><code>square = square*square while square &lt 1000</code></p>
-<p></p>
-<p></p>
+<h2>Regular expressions</h2>
+<p>
+...are built into Ruby.
+</p>
+<p>
+The match operator =~ in Ruby will return the starting position of the matched string, or nil if no match is found.  
+</p>
+<h2>Blocks and Iterators</h2>
+<p>
+Blocks are a particular strength of Ruby - they can be passed to method invocations almost like parameters and marry the benefits of a dynamically typed language.  They can be used to implement callbacks, pass around chunks of code and to implement iterators.
+</p>
+<p>
+Blocks either go in between curly braces or inside do...end statements.
+Once a block is created, it can be associated with a call to a method and that method can invoke the block one or more times using the Ruby <code>yield</code> statement.  
+</p>
+<p>
+Methods that invoke <code>yield</code>, that have themselves been called with a code block passed in, constitute a <i>co-routine</i>
+yield and calls to blocks
+</p>
 <h2></h2>
+
 </html>
 
 
