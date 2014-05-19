@@ -6,7 +6,38 @@
 
 <h1>Ruby notes: Objects</h1>
 <h2>Objects etc...</h2>
+<h3><strong>class keyword</h3>
+'New up' a class with the <strong>class</strong> keyword.
+<p>
+<code>
+class Song
+<br/>
+  def initialize(artist, title, duration)
+<br/>
+      @artist = artist
+<br/>
+      @title = title
+<br/>
+      @duration = duration
+<br/>
+  end
+<br/>
+end 
+</p>
+</code>
 <h3>naming conventions</h3>
 Class names start with a capital letter, methods lower case.
-<strong>Ruby provides an initialize method, by default.  This is similar to a constructor - it will recieve constructor parameters.  It can be overridden...  
-
+Ruby provides an <code>initialize</code> method, by default.  This is similar to a constructor - it will receive constructor parameters.  It can be overridden...  
+<p/><strong>Instance variables</strong> are denoted by '@'
+<h3>inspect and to_s (to string)</h3>
+<code>Inspect</code> gives us a string representation of any object; but the output isn't nicely formatted.  Override <code>to_s</code> in the subclass providing some special formatting...
+<h3>Class inheritance the &lt; notation</h3>
+<ul><li>Indicate object inheritance by using the &lt; character.</li>
+<li>Call the corresponding superclass bit via the <code>super</code> keyword</li></ul>  
+For example, 
+<code><pre>class KaraokeSong < Song
+  def initialize(name, artist, duration, lyrics)
+    super(name, artist, duration)
+    @lyrics = lyrics
+  end
+end</pre></code>
