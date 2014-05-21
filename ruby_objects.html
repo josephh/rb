@@ -33,7 +33,10 @@ Ruby provides an <code>initialize</code> method, by default.  This is similar to
 <code>Inspect</code> gives us a string representation of any object; but the output isn't nicely formatted.  Override <code>to_s</code> in the subclass providing some special formatting...
 <h3>Class inheritance the &lt; notation</h3>
 <ul><li>Indicate object inheritance by using the &lt; character.</li>
-<li>Call the corresponding superclass bit via the <code>super</code> keyword</li></ul>  
+<li>Call the corresponding superclass bit via the <pre>super</pre> keyword</li>
+<li>Use the keyword <monospace>super</monospace> to call up the object hierarchy</li>
+<li>Ruby will allocate the class <pre>Object</pre> as the default supertype if a class does not explicitly declare one</li> 
+</ul>  
 For example, 
 <code><pre>class KaraokeSong < Song
   def initialize(name, artist, duration, lyrics)
@@ -41,3 +44,47 @@ For example,
     @lyrics = lyrics
   end
 end</pre></code>
+<h3>Inheritance and Mixins</h3>
+Ruby does not provide multiple inheritance <i>per se</i> but it does support <pre>Mixins</pre>.  Mixins allow functionality to be composed from different places, without incurring the ambiguity of multiple inheritance.
+<b>A Mixin is like a partial class definition.</b>
+<h3>Object attributes</h3>
+We can return attribute values via accessor methods, e.g.
+<code>
+<pre>
+class Song
+  def artist
+    @artist
+  end
+  def title
+    @title
+  end
+  def duration
+    @duration
+  end
+end
+</pre>
+</code>
+But because this is such a common idiom, Ruby provides an 'accessor methods' shorthand, wich looks like,
+<code>
+<pre>
+class Song
+  attr_reader :artist, :title, :duration # this use of colon is a Symbol - the @ denoted instance variables/ attributes are created implicitly!!!!
+end 
+</pre></code>
+<b>A Symbol - that employs the colon, e.g. ':artist' denotes the variable name, while the variable name itself, e.g. 'artist' is the pointer to the actual value.
+<h3>Attribute value assignment</h3>
+Ruby uses setters for class attributes - similarly to getters shown above.  It includes an idiosyncracy that if a method name includes an '=' sign in the title, it will be eligible for the left hand side of a value assignment, e.g.
+<code><pre>
+class Song
+  def duration=(newDuration)
+    @duration=newDuration
+  end
+end
+</pre></code>
+As before, Ruby provides a shorthand, "attr_writer" 
+<code><pre>
+class Song
+  attr_writer :duration
+end
+aSong = Song.new("Bicylops", "Fleck", 260)
+aSong.duration = 257</pre</code>
