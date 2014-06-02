@@ -87,4 +87,46 @@ class Song
   attr_writer :duration
 end
 aSong = Song.new("Bicylops", "Fleck", 260)
-aSong.duration = 257</pre</code>
+aSong.duration = 257</pre></code>
+<h3>Virtual Attributes</h3>
+Methods that look like setters but actually perform a calculation - and return that value (but don't hold it as a field). 
+Here's a coded example - <i>note the methods have similar names - the signature that takes a parameter is called through the use of the equals sign</i> 
+<code><pre>
+class Song
+  def durationInMinutes
+    @duration/60.0   # force floating point
+  end
+  def durationInMinutes=(value)
+    @duration = (value*60).to_i
+  end
+end
+aSong = Song.new("Bicylops", "Fleck", 260)
+aSong.durationInMinutes 	» 	4.333333333
+aSong.durationInMinutes = 4.2
+aSong.duration 	» 	252
+</pre></code>
+<h3>Class Variables</h3>
+Class variables are close to the Smalltalk definition of classes.  The value held in a class variable is shared across all instances of that class - if it is set once in code, all other references to that class or object instances of that type will get access to that same shared value.  
+<ul><li>They must be initialized before use</li><li>They are NOT global or instance variables - whose value can be reassigned</li></ul>
+<h3>Class Methods</h3>
+Class methods (similar-ish to Java static methods) are declared by including the class name and period '.' in between the method name.
+For example,
+<code><pre>
+Class Example
+
+
+  def instMeth              # instance method
+  end
+
+
+  def Example.classMeth     # class method
+  end
+
+
+end
+</pre></code>
+<h3>Access Control</h3>
+Access control is simlar to other OO languages and includes the modifiers,
+<ol><li>private</li><li>protected</li><li>public</li></ol>	
+But! differs in that it is dynamic - and won't provoke compiler complaints (problems emerge at runtime).
+
