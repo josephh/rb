@@ -129,4 +129,9 @@ end
 Access control is simlar to other OO languages and includes the modifiers,
 <ol><li>private</li><li>protected</li><li>public</li></ol>	
 But! differs in that it is dynamic - and won't provoke compiler complaints (problems emerge at runtime).
-
+Access modifiers can be used in two ways:
+<ol><li>With no arguments: everything following the declaration will receive that same visibility</li><li>Provide declared methods as arguments to an access modifier and the methods receive that visibility.</li</ol>
+A class's initialize method is automatically declared to be <code>private</code>. 
+<h3>Variables</h3>
+...instance variables are pointers in Ruby like other OO languages
+...prevent anyone from changing a particular object by freezing it
