@@ -3,11 +3,15 @@
 require 'amazon/aws/search'
 require 'amazon/aws'
 
-req = Amazon::AWS::Search::Request.new('AKIAJUO56EUJUC6HDDRA')
+# the amazon/aws/search new constructor signature is,  new(key_id=nil, associate=nil, locale=nil, cache=nil, user_agent=USER_AGENT) 
+req = Amazon::AWS::Search::Request.new('AKIAJEJRITLFTFRSEK3A')
 # puts "What does the request look like ? : " + req
 is = Amazon::AWS::ItemSearch.new( 'Books', { 'Title' => 'a tale for the time being' } )
 # for every book...
-req.search(is) do |book|
+obj = req.search(is)
+puts("type of aws object returned by the search ? " + obj.inspect())
+puts("number of items found: " + obj.length())
+# -- comment req.search(is) do |book|
   # print book name and list of authors
-  puts %{"#{book.product_name}" by #{books.authors.join(',')}}
-end
+  # -- comment -- puts %{"#{book.product_name}" by #{books.authors.join(',')}}
+# -- comment -- end
