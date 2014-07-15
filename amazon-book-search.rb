@@ -3,10 +3,13 @@
 require 'amazon/aws/search'
 require 'amazon/aws'
 
+include Amazon::AWS::Search # this is the way to avoid having to fully-qualify class names inline
+include Amazon::AWS
+
 # the amazon/aws/search new constructor signature is,  new(key_id=nil, associate=nil, locale=nil, cache=nil, user_agent=USER_AGENT) 
-req = Amazon::AWS::Search::Request.new('AKIAJEJRITLFTFRSEK3A')
+req = Request.new('AKIAJEJRITLFTFRSEK3A')
 # puts "What does the request look like ? : " + req
-is = Amazon::AWS::ItemSearch.new( 'Books', { 'Title' => 'a tale for the time being' } )
+is = ItemSearch.new( 'Books', { 'Title' => 'a tale for the time being' } )
 # for every book...
 obj = req.search(is)
 puts("type of aws object returned by the search ? " + obj.inspect())
