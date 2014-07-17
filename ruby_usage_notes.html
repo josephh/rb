@@ -27,6 +27,8 @@ Follow <a href="ruby_objects.html">this link<a/> for more about detail on object
 Numbers act like objects and have intrinsic objects built-in.  So, for example, it's possible to get the absolute value of an irrational number simply by entering,  
 <code>numbera = Number.new(1234.32)</code>
 <code>numbera.abs()</code>
+<h2>Strings</h2>
+Note, inside quotes, "#{expression}" is considered to be an expression, which can be replaced following evaluion of that expression.
 <h2>Names</h2>
 Ruby convention = <i>first characters of a name indicate its use</i>
 <ol>
@@ -42,6 +44,17 @@ Following the initial character a name can be any combination of letters, digits
 <h3>Arrays</h3>
 <p>New arrays can be created with an array literal <code>empty1 = []</code> or using the 'new' keyword, <code> empty2 = Array.new</code></p>
 <h3>Hashes</h3>
+<p>A hash literal uses braces rather than square brackets. <code>=></code> is used as the assignment syntax, with commas between hash elements.
+<code><pre>
+AinstSection = {
+  'cello'     => 'string',
+  'clarinet'  => 'woodwind',
+  'drum'      => 'percussion',
+  'oboe'      => 'woodwind',
+  'trumpet'   => 'brass',
+  'violin'    => 'string'
+}
+</pre></code>
 <p>Returns nil when indexed by a key it doesn't contain.  <i>Note! Nil means false in a conditional expression</i> but this default return value (for when a key is not found) can be set on initialisation.</p>
 <p></p>
 <h2>Control Structures</h2>
