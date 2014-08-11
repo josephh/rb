@@ -37,18 +37,17 @@ puts "The response object is an array of " + response.length.to_s + " " + respon
     puts "The is_resp variable is of type " + is_resp.class.to_s + " (it contains " +is_resp.items.length.to_s + " element(s) of type " + is_resp.items.class.to_s  + ")"
     is_resp.items.each do |is|
       puts "NEXT is  >>>"
-        is.each do |e|
-            puts "NEXT e >>>"
-            puts e.class.to_s
-        end 
-        puts "GET SOME DETAILS ABOUT THE ITEM FIELD >>> " 
-        ii = is.item to_s + " of length " + ii.length.to_s
-        puts "PROPERTIES >>> "
-        ii.instance_variables.each do |iv|
-          printf("instance variable name = %s\n", iv, ii.instance_variable_get(iv) )
+        is.item.each do |e|
+          puts "NEXT e >>>"
+          puts e.class.to_s
+          puts "GET SOME DETAILS ABOUT THE ITEM FIELD >>> " 
+          puts "PROPERTIES >>> "
+          e.instance_variables.each do |iv|
+            printf("instance variable name = %s\n", iv, e.instance_variable_get(iv) )
+          end
         end
+      end
     end
-  end 
   
 # 2. You don't have to access the items through a block.
   nr_items = 0
